@@ -79,7 +79,7 @@ export default defineContentConfig({
       schema: z.object({
         title: z.string().nonempty(),
         description: z.string().nonempty(),
-        imagePath: z.string().nonempty(),
+        image: z.string().nonempty().editor({ input: 'media' }),
         url: z.string().nonempty(),
         date: z.date().optional()
       })
@@ -90,7 +90,7 @@ export default defineContentConfig({
       schema: z.object({
         minRead: z.number(),
         date: z.string(),
-        imagePath: z.string().nonempty().editor({ input: 'media' })
+        image: z.string().nonempty().editor({ input: 'media' })
       })
     }),
     pages: defineCollection({

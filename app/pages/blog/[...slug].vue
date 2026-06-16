@@ -21,7 +21,6 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
     fields: ['description']
   })
 )
-const { assetsBaseUrl } = useRuntimeConfig().public
 const { blogAvatarImagePath } = useAppConfig().global
 
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation', ref([]))
@@ -29,8 +28,19 @@ const blogNavigation = computed(() => navigation.value.find(item => item.path ==
 
 const breadcrumb = computed(() => mapContentNavigation(findPageBreadcrumb(blogNavigation?.value, page.value?.path)).map(({ icon, ...link }) => link))
 
-if (page.value.imagePath) {
-  defineOgImage({ url: assetsBaseUrl + page.value.imagePath })
+const img = useImage()
+
+if (page.value.image) {
+  const cleanSrc = page.value.image.startsWith('/r2/')
+    ? page.value.image.replace('/r2/', 'r2:')
+    : page.value.image
+
+  const optimizedOgImageUrl = img(cleanSrc, {
+    width: 1200,
+    height: 630
+  })
+
+  defineOgImage({ url: optimizedOgImageUrl })
 } else {
   defineOgImageComponent('Blog', {
     headline: breadcrumb.value.map(item => item.label).join(' > ')
@@ -78,7 +88,7 @@ const originUrl = computed(() => requestUrl.origin)
             </span>
           </div>
           <NuxtImg
-            :src="assetsBaseUrl + page.imagePath"
+            :src="page.image"
             :alt="page.title"
             class="rounded-lg w-full h-75 object-cover object-center"
           />
@@ -97,7 +107,7 @@ const originUrl = computed(() => requestUrl.origin)
               class="justify-center items-center text-center"
               :to="originUrl"
               :avatar="{
-                src: assetsBaseUrl + blogAvatarImagePath,
+                src: blogAvatarImagePath,
                 alt: 'Foto de de Pedro Midueño con fondo blanco'
               }"
             />

@@ -6,8 +6,6 @@ const { footer, global } = useAppConfig()
 defineProps<{
   page: IndexCollectionItem
 }>()
-
-const { assetsBaseUrl } = useRuntimeConfig().public
 </script>
 
 <template>
@@ -38,9 +36,12 @@ const { assetsBaseUrl } = useRuntimeConfig().public
       >
         <UColorModeAvatar
           class="size-52 sm:size-60 ring ring-default ring-offset-3 ring-offset-bg p-2"
-          :light="assetsBaseUrl + global.picturePath?.light!"
-          :dark="assetsBaseUrl + global.picturePath?.dark!"
+          :light="global.picturePath?.light!"
+          :dark="global.picturePath?.dark!"
           :alt="global.picturePath?.alt!"
+          loading="eager"
+          fetchpriority="high"
+          sizes="xs:208px sm:240px"
         />
       </Motion>
     </template>

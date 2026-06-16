@@ -1,11 +1,11 @@
 export default defineAppConfig({
   global: {
     picturePath: {
-      dark: 'images/foto_portfolio.png',
-      light: 'images/foto_portfolio.png',
+      dark: '/r2/images/foto_portfolio.webp',
+      light: '/r2/images/foto_portfolio.webp',
       alt: 'Imagen de portafolio web de Pedro Midueño'
     },
-    blogAvatarImagePath: 'images/foto_fondo_blanco.jpeg',
+    blogAvatarImagePath: '/r2/images/foto_fondo_blanco.webp',
     meetingLink: 'mailto:pedromidueno.dev@gmail.com',
     email: 'pedromidueno.dev@gmail.com',
     available: true

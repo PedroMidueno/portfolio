@@ -15,7 +15,6 @@ const { data: projects } = await useAsyncData('projects', () => {
 })
 
 const { global } = useAppConfig()
-const { assetsBaseUrl } = useRuntimeConfig().public
 
 useSeoMeta({
   title: page.value?.seo?.title || page.value?.title,
@@ -87,11 +86,14 @@ useSeoMeta({
               />
             </ULink>
           </template>
-          <img
-            :src="assetsBaseUrl + project.imagePath"
+          <NuxtImg
+            :src="project.image"
             :alt="project.title"
             class="object-cover w-full h-48 rounded-lg"
-          >
+            format="webp"
+            width="1200"
+            height="630"
+          />
         </UPageCard>
       </Motion>
     </UPageSection>

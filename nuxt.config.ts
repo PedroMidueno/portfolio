@@ -1,4 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const assetsBaseUrl = process.env.NUXT_PUBLIC_ASSETS_BASE_URL ?? ''
+
+const assetsDomain = assetsBaseUrl.replace(/^https?:\/\//, '')
+
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
@@ -25,7 +29,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      assetsBaseUrl: process.env.NUXT_PUBLIC_ASSETS_BASE_URL ?? ''
+      assetsBaseUrl
     }
   },
 
@@ -68,10 +72,7 @@ export default defineNuxtConfig({
           'typescript',
           '@shikijs/twoslash',
           'twoslash'
-        ],
-        output: {
-          manualChunks: undefined
-        }
+        ]
       }
     },
 
@@ -90,6 +91,21 @@ export default defineNuxtConfig({
         commaDangle: 'never',
         braceStyle: '1tbs'
       }
+    }
+  },
+
+  icon: {
+    clientBundle: {
+      scan: true,
+      icons: ['lucide:sun', 'lucide:moon']
+    }
+  },
+
+  image: {
+    domains: [assetsDomain],
+    provider: process.env.NODE_ENV === 'production' ? 'ipxStatic' : undefined,
+    alias: {
+      r2: assetsBaseUrl
     }
   }
 })

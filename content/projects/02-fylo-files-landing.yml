@@ -1,4 +1,4 @@
 title: Fylo Files Landing page
 description: Basado en un proyecto de la página FrontendMentor, desarrollé esta landing page con Astro para el frontend y Strapi como CMS para la gestión del contenido.
-imagePath: images/fylo-landing-og-image.jpg
+image: /r2/images/fylo-landing-og-image.webp
 url: https://fylo-files-landing.up.railway.app

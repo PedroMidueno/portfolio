@@ -13,7 +13,6 @@ const { data: posts } = await useAsyncData('blogs', () =>
   queryCollection('blog').order('date', 'DESC').all()
 )
 
-const { assetsBaseUrl } = useRuntimeConfig().public
 const { blogAvatarImagePath } = useAppConfig().global
 
 useSeoMeta({
@@ -59,12 +58,12 @@ useSeoMeta({
             :to="post.path"
             :title="post.title"
             :description="post.description"
-            :image="assetsBaseUrl + post.imagePath"
+            :image="post.image"
             :date="post.date"
             :author="{
               name: 'Pedro Midueño',
               avatar: {
-                src: assetsBaseUrl + blogAvatarImagePath,
+                src: blogAvatarImagePath,
                 alt: 'Foto de de Pedro Midueño con fondo blanco'
               }
             }"
