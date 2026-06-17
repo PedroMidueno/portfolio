@@ -5,7 +5,8 @@ const { data: page } = await useAsyncData('blog-page', () => {
 if (!page.value) {
   throw createError({
     statusCode: 404,
-    statusMessage: 'Page not found',
+    statusMessage: 'Página no encontrada',
+    message: 'La página que buscas no existe',
     fatal: true
   })
 }

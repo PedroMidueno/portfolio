@@ -5,7 +5,8 @@ const { data: page } = await useAsyncData('index', () => {
 if (!page.value) {
   throw createError({
     statusCode: 404,
-    statusMessage: 'Page not found',
+    statusMessage: 'Página no encontrada',
+    message: 'La página que buscas no existe',
     fatal: true
   })
 }
@@ -26,11 +27,18 @@ useSeoMeta({
         container: 'pt-0!'
       }"
     >
-      <LandingAbout :page />
-      <LandingWorkExperience :page />
+      <LazyLandingAbout
+        :page
+        hydrate-on-visible
+      />
+      <LazyLandingWorkExperience
+        :page
+        hydrate-on-visible
+      />
     </UPageSection>
-    <!-- <LandingBlog :page />
-    <LandingTestimonials :page />
-    <LandingFAQ :page /> -->
+    <LazyLandingBlog
+      :page
+      hydrate-on-visible
+    />
   </UPage>
 </template>

@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',
+    '@nuxt/fonts',
     '@nuxt/ui',
     'nuxt-content-twoslash',
     '@nuxt/content',
@@ -35,6 +36,10 @@ export default defineNuxtConfig({
 
   devServer: {
     port: 9000
+  },
+
+  features: {
+    inlineStyles: true
   },
 
   compatibilityDate: '2024-11-01',
@@ -107,5 +112,9 @@ export default defineNuxtConfig({
     alias: {
       r2: assetsBaseUrl
     }
+  },
+
+  ogImage: {
+    zeroRuntime: true
   }
 })

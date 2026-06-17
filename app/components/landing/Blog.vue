@@ -14,14 +14,15 @@ if (!posts.value) {
 </script>
 
 <template>
-  <UPageSection
+  <LazyUPageSection
     :title="page.blog.title"
     :description="page.blog.description"
     :ui="{
-      container: 'px-0 !pt-0 sm:gap-6 lg:gap-8',
+      container: 'px-0 pt-0! sm:gap-6 lg:gap-8',
       title: 'text-left text-xl sm:text-xl lg:text-2xl font-medium',
       description: 'text-left mt-2 text-sm sm:text-md lg:text-sm text-muted'
     }"
+    hydrate-on-visible
   >
     <UBlogPosts
       orientation="vertical"
@@ -36,7 +37,7 @@ if (!posts.value) {
         :to="post.path"
         :ui="{
           root: 'group relative lg:items-start lg:flex ring-0 hover:ring-0',
-          body: '!px-0',
+          body: 'px-0!',
           header: 'hidden'
         }"
       >
@@ -45,7 +46,7 @@ if (!posts.value) {
             size="xs"
             variant="link"
             class="px-0 gap-0"
-            label="Read Article"
+            label="Leer artículo"
           >
             <template #trailing>
               <UIcon
@@ -57,5 +58,5 @@ if (!posts.value) {
         </template>
       </UBlogPost>
     </UBlogPosts>
-  </UPageSection>
+  </LazyUPageSection>
 </template>

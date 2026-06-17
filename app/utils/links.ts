@@ -16,14 +16,4 @@ export const navLinks: NavigationMenuItem[] = [
     icon: 'i-lucide-file-text',
     to: '/blog'
   }
-  // {
-  //   label: 'Speaking',
-  //   icon: 'i-lucide-mic',
-  //   to: '/speaking'
-  // },
-  // {
-  //   label: 'About',
-  //   icon: 'i-lucide-user',
-  //   to: '/about'
-  // }
 ]
