@@ -2,7 +2,6 @@
 const colorMode = useColorMode()
 
 const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
-const { assetsBaseUrl } = useRuntimeConfig().public
 
 useHead({
   meta: [
@@ -18,10 +17,15 @@ useHead({
   }
 })
 
+const optimizedOgImageUrl = useOptimizedImageUrl('/r2/images/portfolio_og_image.webp', {
+  width: 1200,
+  height: 630
+})
+
 useSeoMeta({
   titleTemplate: '%s',
-  ogImage: `${assetsBaseUrl}images/portfolio_og_image.png`,
-  twitterImage: `${assetsBaseUrl}images/portfolio_og_image.png`,
+  ogImage: optimizedOgImageUrl,
+  twitterImage: optimizedOgImageUrl,
   twitterCard: 'summary_large_image'
 })
 </script>

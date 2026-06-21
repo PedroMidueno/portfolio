@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import type { ContentNavigationItem } from '@nuxt/content'
-import { mapContentNavigation } from '@nuxt/ui/utils/content'
-import { findPageBreadcrumb } from '@nuxt/content/utils'
-
 const route = useRoute()
 
 const { data: page } = await useAsyncData(route.path, () =>
@@ -23,31 +19,10 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
 )
 const { blogAvatarImagePath } = useAppConfig().global
 
-const navigation = inject<Ref<ContentNavigationItem[]>>('navigation', ref([]))
-const blogNavigation = computed(() => navigation.value.find(item => item.path === '/blog')?.children || [])
-
-const breadcrumb = computed(() => mapContentNavigation(findPageBreadcrumb(blogNavigation?.value, page.value?.path)).map(({ icon, ...link }) => link))
-
-const img = useImage()
-
-if (page.value.image) {
-  const cleanSrc = page.value.image.startsWith('/r2/')
-    ? page.value.image.replace('/r2/', 'r2:')
-    : page.value.image
-
-  const optimizedOgImageUrl = img(cleanSrc, {
-    width: 1200,
-    height: 630
-  })
-
-  defineOgImage({ url: optimizedOgImageUrl })
-} else {
-  defineOgImageComponent('Blog', {
-    headline: breadcrumb.value.map(item => item.label).join(' > ')
-  }, {
-    fonts: ['Geist:400', 'Geist:600']
-  })
-}
+const optimizedOgImageUrl = useOptimizedImageUrl(page.value.image, {
+  width: 1200,
+  height: 630
+})
 
 const title = page.value?.seo?.title || page.value?.title
 const description = page.value?.seo?.description || page.value?.description
@@ -55,8 +30,12 @@ const description = page.value?.seo?.description || page.value?.description
 useSeoMeta({
   title,
   description,
+  ogTitle: title,
   ogDescription: description,
-  ogTitle: title
+  ogImage: optimizedOgImageUrl,
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: optimizedOgImageUrl
 })
 
 const requestUrl = useRequestURL()
