@@ -50,6 +50,12 @@ export default defineAppConfig({
         'to': 'https://x.com/pemid_dev',
         'target': '_blank',
         'aria-label': 'Perfil de X (antes Twitter) de Pedro Midueño'
+      },
+      {
+        'icon': 'i-lucide-file-user',
+        'to': 'https://assets.pemid.dev/pdf/CV_PedroMidueno.pdf',
+        'target': '_blank',
+        'aria-label': 'Currículum Vitae de Pedro Midueño'
       }
     ]
   }
