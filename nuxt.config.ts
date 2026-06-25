@@ -48,11 +48,7 @@ export default defineNuxtConfig({
       routes: ['/'],
       crawlLinks: true,
       failOnError: false,
-      ignore: [
-        '/about',
-        '/speaking',
-        '/blog/undefined'
-      ]
+      ignore: ['/blog/undefined']
     },
     rollupConfig: {
       external: [
@@ -107,7 +103,6 @@ export default defineNuxtConfig({
 
   image: {
     domains: [assetsDomain],
-    provider: process.env.NODE_ENV === 'production' ? 'ipxStatic' : undefined,
     alias: {
       r2: assetsBaseUrl
     }
