@@ -137,7 +137,7 @@ defineProps<{
           </UButton>
           <UButton
             v-bind="page.hero.links[0]"
-            @click="copyToClipboard('pedromidueno.dev@gmail.com', 'Email copiado al portapapeles')"
+            @click="copyToClipboard(global.email, 'Email copiado al portapapeles')"
           />
         </div>
       </Motion>
