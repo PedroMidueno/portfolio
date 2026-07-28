@@ -44,8 +44,8 @@ const originUrl = computed(() => requestUrl.origin)
 </script>
 
 <template>
-  <UMain class="mt-20 px-2">
-    <UContainer class="relative min-h-screen">
+  <UMain class="mt-20 md:px-2">
+    <UContainer class="relative min-h-screen px-0">
       <UPage v-if="page">
         <ULink
           to="/blog"
@@ -71,10 +71,10 @@ const originUrl = computed(() => requestUrl.origin)
             :alt="page.title"
             class="rounded-lg w-full h-75 object-cover object-center"
           />
-          <h1 class="text-4xl text-center font-medium max-w-3xl mx-auto mt-4">
+          <h1 class="text-3xl sm:text-4xl text-center font-medium max-w-3xl mx-auto mt-4">
             {{ page.title }}
           </h1>
-          <p class="text-muted text-center max-w-2xl mx-auto">
+          <p class="text-muted text-center max-w-2xl mx-auto text-sm sm:text-base">
             {{ page.description }}
           </p>
           <div class="flex items-center justify-center gap-2 mt-2">
