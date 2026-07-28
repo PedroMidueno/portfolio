@@ -24,7 +24,7 @@ useSeoMeta({
     <LandingHero :page />
     <UPageSection
       :ui="{
-        container: 'pt-0!'
+        container: 'pt-0! px-0'
       }"
     >
       <LazyLandingAbout

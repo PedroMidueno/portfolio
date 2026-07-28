@@ -31,6 +31,7 @@ useSeoMeta({
       :description="page.description"
       :links="page.links"
       :ui="{
+        container: 'px-0',
         title: 'mx-0! text-left',
         description: 'mx-0! text-left',
         links: 'justify-start'
@@ -38,7 +39,7 @@ useSeoMeta({
     />
     <UPageSection
       :ui="{
-        container: 'pt-0!'
+        container: 'pt-0! px-0'
       }"
     >
       <UBlogPosts
@@ -76,7 +77,8 @@ useSeoMeta({
               header:
                 index % 2 === 0
                   ? 'sm:-rotate-1 overflow-visible'
-                  : 'sm:rotate-1 overflow-visible'
+                  : 'sm:rotate-1 overflow-visible',
+              body: 'px-0'
             }"
           />
         </Motion>

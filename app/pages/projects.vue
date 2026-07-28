@@ -32,6 +32,7 @@ useSeoMeta({
       :description="page.description"
       :links="page.links"
       :ui="{
+        container: 'px-0',
         title: 'mx-0! text-left',
         description: 'mx-0! text-left',
         links: 'justify-start'
@@ -52,7 +53,7 @@ useSeoMeta({
     </UPageHero>
     <UPageSection
       :ui="{
-        container: 'pt-0!'
+        container: 'pt-0! px-0'
       }"
     >
       <Motion
