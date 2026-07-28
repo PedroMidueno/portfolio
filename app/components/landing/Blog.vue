@@ -14,7 +14,7 @@ if (!posts.value) {
 </script>
 
 <template>
-  <LazyUPageSection
+  <UPageSection
     :title="page.blog.title"
     :description="page.blog.description"
     :ui="{
@@ -22,7 +22,6 @@ if (!posts.value) {
       title: 'text-left text-xl sm:text-xl lg:text-2xl font-medium',
       description: 'text-left mt-2 text-sm sm:text-md lg:text-sm text-muted'
     }"
-    hydrate-on-visible
   >
     <UBlogPosts
       orientation="vertical"
@@ -58,5 +57,5 @@ if (!posts.value) {
         </template>
       </UBlogPost>
     </UBlogPosts>
-  </LazyUPageSection>
+  </UPageSection>
 </template>
