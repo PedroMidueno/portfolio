@@ -24,7 +24,6 @@
     "better-sqlite3": "^12.8.0",
     "motion-v": "^2.2.0",
     "nuxt": "^4.4.2",
-    "nuxt-content-twoslash": "^0.4.0",
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {

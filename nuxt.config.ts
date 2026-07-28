@@ -9,7 +9,6 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/fonts',
     '@nuxt/ui',
-    'nuxt-content-twoslash',
     '@nuxt/content',
     '@vueuse/nuxt',
     'motion-v/nuxt'
@@ -49,39 +48,12 @@ export default defineNuxtConfig({
       crawlLinks: true,
       failOnError: false,
       ignore: ['/blog/undefined']
-    },
-    rollupConfig: {
-      external: [
-        '@nuxtjs/mdc/config',
-        '@nuxtjs/mdc',
-        'typescript',
-        'twoslash',
-        '@shikijs/twoslash'
-      ]
     }
   },
 
   vite: {
     optimizeDeps: {
       include: ['@justinribeiro/lite-youtube']
-    },
-    build: {
-      chunkSizeWarningLimit: 1500,
-      rollupOptions: {
-        external: [
-          'typescript',
-          '@shikijs/twoslash',
-          'twoslash'
-        ]
-      }
-    },
-
-    ssr: {
-      external: [
-        'typescript',
-        'twoslash',
-        '@shikijs/twoslash'
-      ]
     }
   },
 

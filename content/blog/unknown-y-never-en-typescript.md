@@ -12,7 +12,7 @@ Regularmente cuando escribimos código TypeScript solemos usar muchos tipos que 
 ## `never`
 El tipo `never` en TypeScript representa valores que nunca deben ocurrir. Se puede utilizar principalmente para tipar valores de retorno de funciones que nunca terminan su ejecución (ya sea porque lanzan un error o porque tienen un bucle infinito), otro de los usos de `never` purde ser para asegurar que todas las condiciones que una estructura `switch` o `if/else` esten cubiertas, a esto último lo llamamos ***Comprobacion Exhaustiva***.
 
-```ts twoslash
+```ts
 // Lanza un error y nunca llega a su fin
 function lanzarError(mensaje: string): never {
     throw new Error(mensaje);
@@ -51,7 +51,7 @@ Pues para entender la razón de ser de este tipo, debemos recordar que el princi
 
 Por esta situación es que existe el tipo `unknown`, ya que se podría considerar la ***"Versión Segura"*** del tipo `any`. Para entender cómo funciona y cómo nos ayuda, veamos este ejemplo de código.
 
-```ts twoslash
+```ts
 function procesarDato(dato: any) {
   console.log(dato.toUpperCase())
 
@@ -63,20 +63,19 @@ function procesarDato(dato: any) {
 
 Como podemos observar, a pesar de que estamos intentando hacer 3 operaciones diferentes que solo serían posibles con 3 tipos diferentes, TypeScript no nos avisa de nada de las implicaciones que un código como este llegue a producción, que podría causar errorer que en teoría el compilador nos debería de avisar, esto porque usamos `any`. Pero ahora veamos qué pasa si solo cambiamos el tipo a `unknown`.
 
-```ts twoslash
-// @errors: 18046
+```ts
 function procesarDato(dato: unknown) {
-  console.log(dato.toUpperCase())
+  console.log(dato.toUpperCase()) // error: 'dato' is of type 'unknown'
 
-  console.log(dato * 10)
+  console.log(dato * 10) // error: 'dato' is of type 'unknown'
 
-  console.log(`Hola, mi nombre es ${dato.nombres}`)
+  console.log(`Hola, mi nombre es ${dato.nombres}`) // error: 'dato' is of type 'unknown'
 }
 ```
 
 Como nos damos cuenta ahora, TypeScript nos está marcando un error de que el tipo de `dato` es `unknown` pero, ¿por qué?. La razón es porque al usar el tipo `unknown` TypeScript nos "obliga" a hacer comprobaciones previas para poder operar con la variable o constante que está tipada con `unknown`, en otras palabras, ***no podemos operar con una variable o constante que esté tipada con unknown hasta que le digamos a TypeScript o le demos "pistas" de con qué tipo de dato estamos operando***. Prácticamente necesitaremos aplicar los conceptos de **Type Guards** y **Type Narrowing** para usar el parámetro `dato`.
 
-```ts twoslash
+```ts
 function procesarDato(dato: unknown) {
   if (typeof dato === 'string') {
     console.log(dato.toUpperCase())
