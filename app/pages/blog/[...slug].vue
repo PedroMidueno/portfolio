@@ -56,10 +56,10 @@ const originUrl = computed(() => requestUrl.origin)
         </ULink>
         <div class="flex flex-col gap-3 mt-8">
           <div class="flex text-xs text-muted items-center justify-center gap-2">
-            <span v-if="page.date">
-              {{ page.date }}
+            <span v-if="page.pubDate">
+              {{ formatDate(page.pubDate) }}
             </span>
-            <span v-if="page.date && page.minRead">
+            <span v-if="page.pubDate && page.minRead">
               -
             </span>
             <span v-if="page.minRead">

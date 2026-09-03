@@ -6,7 +6,7 @@ defineProps<{
 }>()
 
 const { data: posts } = await useAsyncData('index-blogs', () =>
-  queryCollection('blog').order('date', 'DESC').limit(3).all()
+  queryCollection('blog').order('pubDate', 'DESC').limit(3).all()
 )
 if (!posts.value) {
   throw createError({ statusCode: 404, statusMessage: 'blogs posts not found', fatal: true })
@@ -33,6 +33,7 @@ if (!posts.value) {
         orientation="horizontal"
         variant="naked"
         v-bind="post"
+        :date="formatDate(post.pubDate)"
         :to="post.path"
         :ui="{
           root: 'group relative lg:items-start lg:flex ring-0 hover:ring-0',

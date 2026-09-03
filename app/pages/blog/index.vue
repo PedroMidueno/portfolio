@@ -11,7 +11,7 @@ if (!page.value) {
   })
 }
 const { data: posts } = await useAsyncData('blogs', () =>
-  queryCollection('blog').order('date', 'DESC').all()
+  queryCollection('blog').order('pubDate', 'DESC').all()
 )
 
 const { blogAvatarImagePath } = useAppConfig().global
@@ -61,7 +61,7 @@ useSeoMeta({
             :title="post.title"
             :description="post.description"
             :image="post.image"
-            :date="post.date"
+            :date="formatDate(post.pubDate)"
             :author="{
               name: 'Pedro Midueño',
               avatar: {
