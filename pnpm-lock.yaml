@@ -12,12 +12,6 @@ importers:
 
   .:
     dependencies:
-      '@iconify-json/lucide':
-        specifier: ^1.2.100
-        version: 1.2.112
-      '@iconify-json/simple-icons':
-        specifier: ^1.2.75
-        version: 1.2.86
       '@justinribeiro/lite-youtube':
         specifier: ^1.9.0
         version: 1.9.0
@@ -36,6 +30,12 @@ importers:
       better-sqlite3:
         specifier: ^12.8.0
         version: 12.10.1
+      feed:
+        specifier: ^6.0.0
+        version: 6.0.0
+      marked:
+        specifier: ^18.0.11
+        version: 18.0.11
       motion-v:
         specifier: ^2.2.0
         version: 2.3.0(@vueuse/core@14.3.0(vue@3.5.38(typescript@6.0.3)))(vue@3.5.38(typescript@6.0.3))
@@ -46,6 +46,15 @@ importers:
         specifier: ^4.2.2
         version: 4.3.1
     devDependencies:
+      '@iconify-json/lucide':
+        specifier: ^1.2.100
+        version: 1.2.112
+      '@iconify-json/simple-icons':
+        specifier: ^1.2.75
+        version: 1.2.86
+      '@iconify-json/tabler':
+        specifier: ^1.2.38
+        version: 1.2.38
       '@nuxt/eslint':
         specifier: ^1.15.2
         version: 1.16.0(@typescript-eslint/utils@8.61.0(eslint@10.5.0(jiti@2.7.0))(typescript@6.0.3))(@vue/compiler-sfc@3.5.38)(crossws@0.4.6(srvx@0.11.16))(eslint@10.5.0(jiti@2.7.0))(magicast@0.5.3)(oxc-parser@0.133.0)(typescript@6.0.3)(vite@7.3.5(@types/node@25.9.3)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.48.0)(yaml@2.9.0))
@@ -694,6 +703,9 @@ packages:
 
   '@iconify-json/simple-icons@1.2.86':
     resolution: {integrity: sha512-t3jck5qPQuK1qy+bRn9eCoDQhIB7XSazKz1Fjp8hcan3XOAsTI5Mq/s3F0ekOKSvMQqkVORYK6ns6o6T9f5EMA==}
+
+  '@iconify-json/tabler@1.2.38':
+    resolution: {integrity: sha512-9v6ooRU/bKOK/Whv4w2aiK5gBnfCV9Ei+uD1iDDeLu2b+EnF3G3ZKkRKWEOOLG8bJyfKn6XEia6gUQ9oO7cF+Q==}
 
   '@iconify/collections@1.0.696':
     resolution: {integrity: sha512-k06LxE/f1o3Tuj/n+ugiCyyq6CGxUG+k8o5ZZbOgVBHvpHiAWDDvZvdOSLNC8zeISRJhhiD04FkDKP7zk63fxQ==}
@@ -3825,6 +3837,10 @@ packages:
       picomatch:
         optional: true
 
+  feed@6.0.0:
+    resolution: {integrity: sha512-rvFOF1POce0ijAKy3tZN5T8PuprgIit/VbMyXJWcoYwcMOTSIJ7NqZb8DTLPJr77yiEO27kidm/fw0kcSIV+ww==}
+    engines: {node: '>=20', pnpm: '>=10'}
+
   file-entry-cache@8.0.0:
     resolution: {integrity: sha512-XXTUwCvisa5oacNGRP9SfNtYBNAMi+RPwBFmblZEF7N7swHYQS6/Zfk7SRwx4D5j3CH211YNRco1DEMNVfZCnQ==}
     engines: {node: '>=16.0.0'}
@@ -4529,6 +4545,11 @@ packages:
 
   marked@17.0.6:
     resolution: {integrity: sha512-gB0gkNafnonOw0obSTEGZTT86IuhILt2Wfx0mWH/1Au83kybTayroZ/V6nS25mN7u8ASy+5fMhgB3XPNrOZdmA==}
+    engines: {node: '>= 20'}
+    hasBin: true
+
+  marked@18.0.11:
+    resolution: {integrity: sha512-HnslJfsZkRPBDJRHvVtAaWlZHEpSu7u8LgQuJCELjRKuWR+hpq4A7sLq3p8HaI9ypVoXDXxV34CsQJEe1+J5Aw==}
     engines: {node: '>= 20'}
     hasBin: true
 
@@ -6422,6 +6443,10 @@ packages:
     resolution: {integrity: sha512-g/eziiSUNBSsdDJtCLB8bdYEUMj4jR7AGeUo96p/3dTafgjHhpF4RiCFPiRILwjQoDXx5MqkBr4fwWtR3Ky4Wg==}
     engines: {node: '>=20'}
 
+  xml-js@1.6.11:
+    resolution: {integrity: sha512-7rVi2KMfwfWFl+GpPg6m80IVMWXLRjO+PxTq7V2CDhoGak0wzYzFgUY2m4XJ47OGdXd8eLE8EmwfAmdjw7lC1g==}
+    hasBin: true
+
   xml-name-validator@4.0.0:
     resolution: {integrity: sha512-ICP2e+jsHvAj2E2lIHxa5tjXRlKDJo4IdvPvCXbXQGdzSfmSpNVyIKMvoZHjDY9DP0zV17iI85o90vRFXNccRw==}
     engines: {node: '>=12'}
@@ -7031,6 +7056,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/simple-icons@1.2.86':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/tabler@1.2.38':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -10342,6 +10371,10 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.4
 
+  feed@6.0.0:
+    dependencies:
+      xml-js: 1.6.11
+
   file-entry-cache@8.0.0:
     dependencies:
       flat-cache: 4.0.1
@@ -11148,6 +11181,8 @@ snapshots:
   markdown-table@3.0.4: {}
 
   marked@17.0.6: {}
+
+  marked@18.0.11: {}
 
   math-intrinsics@1.1.0: {}
 
@@ -13689,6 +13724,10 @@ snapshots:
     dependencies:
       is-wsl: 3.1.1
       powershell-utils: 0.1.0
+
+  xml-js@1.6.11:
+    dependencies:
+      sax: 1.6.0
 
   xml-name-validator@4.0.0: {}
 
