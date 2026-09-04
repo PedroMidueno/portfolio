@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const assetsBaseUrl = process.env.NUXT_PUBLIC_ASSETS_BASE_URL ?? ''
+const siteUrl = process.env.NUXT_PUBLIC_SITE_URL ?? ''
 
 const assetsDomain = assetsBaseUrl.replace(/^https?:\/\//, '')
 
@@ -28,7 +29,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      assetsBaseUrl
+      assetsBaseUrl,
+      siteUrl
     }
   },
 
