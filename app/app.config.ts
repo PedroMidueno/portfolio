@@ -31,31 +31,43 @@ export default defineAppConfig({
         'icon': 'i-simple-icons-youtube',
         'to': 'https://www.youtube.com/@pemid_dev?sub_confirmation=1',
         'target': '_blank',
-        'aria-label': 'Canal de Youtube pemid - Desarrollo web y programación'
+        'aria-label': 'Canal de Youtube pemid - Desarrollo web y programación',
+        'tooltipLabel': 'YouTube'
       },
       {
         'icon': 'i-simple-icons-linkedin',
         'to': 'https://www.linkedin.com/in/pedromidueno/',
         'target': '_blank',
-        'aria-label': 'Perfil de LinkedIn de Pedro Midueño'
+        'aria-label': 'Perfil de LinkedIn de Pedro Midueño',
+        'tooltipLabel': 'LinkedIn'
       },
       {
         'icon': 'i-simple-icons-github',
         'to': 'https://github.com/PedroMidueno',
         'target': '_blank',
-        'aria-label': 'Perfil de Github de Pedro Midueño'
+        'aria-label': 'Perfil de Github de Pedro Midueño',
+        'tooltipLabel': 'GitHub'
       },
       {
         'icon': 'i-simple-icons-x',
         'to': 'https://x.com/pemid_dev',
         'target': '_blank',
-        'aria-label': 'Perfil de X (antes Twitter) de Pedro Midueño'
+        'aria-label': 'Perfil de X (antes Twitter) de Pedro Midueño',
+        'tooltipLabel': 'X (antes Twitter)'
       },
       {
-        'icon': 'i-lucide-file-user',
+        'icon': 'i-tabler-file-cv-filled',
         'to': 'https://assets.pemid.dev/pdf/CV_PedroMidueno.pdf',
         'target': '_blank',
-        'aria-label': 'Currículum Vitae de Pedro Midueño'
+        'aria-label': 'Currículum Vitae de Pedro Midueño',
+        'tooltipLabel': 'CV'
+      },
+      {
+        'icon': 'i-tabler-rss',
+        'to': `/rss.xml`,
+        'target': '_blank',
+        'aria-label': 'Feed RSS del Blog de pemid.dev',
+        'tooltipLabel': 'Feed RSS'
       }
     ]
   }

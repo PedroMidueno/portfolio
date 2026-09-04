@@ -162,9 +162,16 @@ defineProps<{
             delay: 0.5 + index * 0.1
           }"
         >
-          <UButton
-            v-bind="{ size: 'md', color: 'neutral', variant: 'ghost', ...link }"
-          />
+          <UTooltip
+            :text="link.tooltipLabel"
+            :content="{
+              side: 'top'
+            }"
+          >
+            <UButton
+              v-bind="{ size: 'md', color: 'neutral', variant: 'ghost', ...link }"
+            />
+          </UTooltip>
         </Motion>
       </div>
     </template>
