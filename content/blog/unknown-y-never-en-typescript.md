@@ -3,7 +3,7 @@ title: Unknown y Never en TypeScript
 description: Una introducción a los tipos unknown y never, sus principales características y posibles usos.
 pubDate: 2026-06-15T00:00:00-06:00
 image: /r2/images/blog/01-never-unknown.webp
-minRead: 10
+minRead: 5
 categories:
   - javascript
 ---
