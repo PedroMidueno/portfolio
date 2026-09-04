@@ -4,6 +4,8 @@ description: Una introducción a los tipos unknown y never, sus principales cara
 pubDate: 2026-06-15T00:00:00-06:00
 image: /r2/images/blog/01-never-unknown.webp
 minRead: 10
+categories:
+  - javascript
 ---
 
 Regularmente cuando escribimos código TypeScript solemos usar muchos tipos que son muy conocidos como `string`, `number`, `boolean`, entre otros. Sin embargo existen otros tipos menos conocidos y usados, en este espacio hablaremos acerca de dos de ellos, que son `unknown` y `never`.

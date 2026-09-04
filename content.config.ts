@@ -1,4 +1,5 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
+import { BLOG_CATEGORIES } from './shared/consts'
 
 const createBaseSchema = () => z.object({
   title: z.string(),
@@ -63,7 +64,9 @@ export default defineContentConfig({
       schema: z.object({
         minRead: z.number(),
         pubDate: z.string(),
-        image: z.string().nonempty().editor({ input: 'media' })
+        image: z.string().nonempty().editor({ input: 'media' }),
+        categories: z.array(z.enum(BLOG_CATEGORIES)),
+        rawbody: z.string()
       })
     }),
     pages: defineCollection({
