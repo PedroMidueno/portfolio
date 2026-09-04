@@ -18,6 +18,18 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   },
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'alternate',
+          type: 'application/rss+xml',
+          title: 'El blog de pemid.dev',
+          href: '/rss.xml'
+        }
+      ]
+    }
+  },
 
   css: ['~/assets/css/main.css'],
 
@@ -46,7 +58,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: ['/'],
+      routes: ['/rss.xml'],
       crawlLinks: true,
       failOnError: false,
       ignore: ['/blog/undefined']
