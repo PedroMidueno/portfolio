@@ -1,0 +1,12 @@
+{
+    "version": "0.2",
+    "language": "es, en",
+    // words - list of words to be always considered correct
+    "words": [
+      "pemid", "inicialización", "hoisteada", "inicializarlas", "enterderlo", "webp", "bindear", "onclick", "encapsulamiento",
+      "comprenderlo"
+    ],
+    // flagWords - list of words to be always considered incorrect
+    // This is useful for offensive words and common spelling errors.
+    "flagWords": []
+}
