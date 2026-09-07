@@ -105,7 +105,7 @@ const originUrl = computed(() => requestUrl.origin)
               color="neutral"
               label="Copiar enlace"
               class="cursor-pointer"
-              @click="copyToClipboard(articleLink, 'Enlace del artículo copiado al portapapeles')"
+              @click="copyToClipboard(articleLink, 'Enlace del artículo copiado al portapapeles. Gracias por compartir!')"
             />
           </div>
           <UContentSurround
