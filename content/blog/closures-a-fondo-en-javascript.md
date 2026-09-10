@@ -3,7 +3,7 @@ title: Closures a fondo en JavaScript
 description: Aprende qué son las closures y otros conceptos del lenguaje JavaScript que hacen posibles su funcionamiento.
 pubDate: 2026-09-07T00:00:00-06:00
 image: /r2/images/blog/02-closures-a-fondo-en-js.webp
-minRead: 10
+minRead: 20
 categories:
   - javascript
 ---
@@ -25,7 +25,7 @@ seguro que algo nuevo aprendes hoy.
 
 ## ¿Qué son las closures?
 
-Un closure es la combinación de uan función agrupada dentro de otra con referencias a su estado adyacente. Veamos el siguiente
+Un closure es la combinación de una función agrupada dentro de otra con referencias a su estado adyacente. Veamos el siguiente
 ejemplo para entenderlo un poco mejor:
 
 ``` js
