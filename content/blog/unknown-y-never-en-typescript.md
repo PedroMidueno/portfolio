@@ -12,7 +12,7 @@ Regularmente cuando escribimos código TypeScript solemos usar muchos tipos que 
 
 
 ## `never`
-El tipo `never` en TypeScript representa valores que nunca deben ocurrir. Se puede utilizar principalmente para tipar valores de retorno de funciones que nunca terminan su ejecución (ya sea porque lanzan un error o porque tienen un bucle infinito), otro de los usos de `never` purde ser para asegurar que todas las condiciones que una estructura `switch` o `if/else` esten cubiertas, a esto último lo llamamos ***Comprobacion Exhaustiva***.
+El tipo `never` en TypeScript representa valores que nunca deben ocurrir. Se puede utilizar principalmente para tipar valores de retorno de funciones que nunca terminan su ejecución (ya sea porque lanzan un error o porque tienen un bucle infinito), otro de los usos de `never` puede ser para asegurar que todas las condiciones que una estructura `switch` o `if/else` estén cubiertas, a esto último lo llamamos ***Comprobación Exhaustiva***.
 
 ```ts
 // Lanza un error y nunca llega a su fin
@@ -47,7 +47,7 @@ Aunque ciertamente será muy extraño que los dos primeros ejemplos los lleguemo
 
 ## `unknown`
 
-Muchas veces me pasó que cuando recien comencé a trabajar con TypeScript, me llegaba a encontrar código que usaba este tipo, y realmente no entendía para qué servía, yo pensaba que si ya teníamos el tipo `any` - que se podría considerar que es de un tipo que desconocemos - ¿para qué se habrían molestado en agregar el tipo `unknown`? ¿No?
+Muchas veces me pasó que cuando recién comencé a trabajar con TypeScript, me llegaba a encontrar código que usaba este tipo, y realmente no entendía para qué servía, yo pensaba que si ya teníamos el tipo `any` - que se podría considerar que es de un tipo que desconocemos - ¿para qué se habrían molestado en agregar el tipo `unknown`? ¿No?
 
 Pues para entender la razón de ser de este tipo, debemos recordar que el principal objetivo de TypeScript es ayudarnos a que no lleguen errores en tiempo de ejecución por el tipado dinámico que tiene JavaScript, y que podamos darnos cuenta de ellos en tiempo de compilación, esto lo hace agregando una capa encima de JavaScript para tener el ***"tipado estricto"***. Sin embargo tenemos muchas formas de poder engañar al compilador de TypeScript por ejemplo haciendo uso de `any` o las aserciones de tipo `as`.
 
@@ -63,7 +63,7 @@ function procesarDato(dato: any) {
 }
 ```
 
-Como podemos observar, a pesar de que estamos intentando hacer 3 operaciones diferentes que solo serían posibles con 3 tipos diferentes, TypeScript no nos avisa de nada de las implicaciones que un código como este llegue a producción, que podría causar errorer que en teoría el compilador nos debería de avisar, esto porque usamos `any`. Pero ahora veamos qué pasa si solo cambiamos el tipo a `unknown`.
+Como podemos observar, a pesar de que estamos intentando hacer 3 operaciones diferentes que solo serían posibles con 3 tipos diferentes, TypeScript no nos avisa de nada de las implicaciones que un código como este llegue a producción, que podría causar errores que en teoría el compilador nos debería de avisar, esto porque usamos `any`. Pero ahora veamos qué pasa si solo cambiamos el tipo a `unknown`.
 
 ```ts
 function procesarDato(dato: unknown) {
@@ -100,7 +100,7 @@ Gracias a estas comprobaciones (*Type Guards*) que hicimos en nuestro código, p
 Ahora que conocemos estos conceptos podemos comenzar a escribir código **TypeScript** más seguro y profesional, recuerda esto:
 
 - Usa `unknown` en lugar de `any` para obligarte a validar el tipo de dato antes de operar si no conoces realmente el tipo de dato que tendrá un parámetro, un variable o constante.
-- Puedes usar `never` para garantizar que tus estructuras lógicas manegen todos los casos posibles.
+- Puedes usar `never` para garantizar que tus estructuras lógicas manejen todos los casos posibles.
 
 Si deseas conocer más acerca de estos temas te invito a que veas el video que te dejo a continuación.
 

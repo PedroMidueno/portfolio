@@ -14,5 +14,16 @@
       "ui:\\s*{([^)]*)\\s*}",
       "(?:'|\"|`)([^']*)(?:'|\"|`)"
     ]
-  ]
+  ],
+  "cSpell.enabled": true,
+  "cSpell.enabledFileTypes": {
+    "javascript": false,
+    "javascriptreact": false,
+    "markdown": true,
+    "plaintext": true,
+    "typescript": false,
+    "typescriptreact": false,
+    "vue": false,
+    "json": false
+  },
 }
