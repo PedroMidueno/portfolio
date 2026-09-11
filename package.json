@@ -11,7 +11,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "nuxt typecheck",
-    "start": "serve .output/public -l $PORT"
+    "start": "serve .output/public -l $PORT",
+    "start:local": "pnpm cleanup && NUXT_PUBLIC_SITE_URL=https://pemid.dev pnpm build && PORT=9000 pnpm preview"
   },
   "dependencies": {
     "@justinribeiro/lite-youtube": "^1.9.0",
@@ -37,11 +38,5 @@
     "typescript": "^6.0.2",
     "vue-tsc": "^3.2.6"
   },
-  "packageManager": "pnpm@10.33.0",
-  "pnpm": {
-    "overrides": {
-      "vue": "3",
-      "@vue/server-renderer": "3"
-    }
-  }
+  "packageManager": "pnpm@10.33.0"
 }
