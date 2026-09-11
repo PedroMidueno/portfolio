@@ -18,6 +18,7 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
   })
 )
 const { blogAvatarImagePath } = useAppConfig().global
+const { siteUrl } = useRuntimeConfig().public
 
 const optimizedOgImageUrl = useOptimizedImageUrl(page.value.image, {
   width: 1200,
@@ -32,10 +33,20 @@ useSeoMeta({
   description,
   ogTitle: title,
   ogDescription: description,
+  ogUrl: `${siteUrl}${route.path}`,
   ogImage: optimizedOgImageUrl,
   twitterTitle: title,
   twitterDescription: description,
   twitterImage: optimizedOgImageUrl
+})
+
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: `${siteUrl}${route.path}`
+    }
+  ]
 })
 
 const requestUrl = useRequestURL()
