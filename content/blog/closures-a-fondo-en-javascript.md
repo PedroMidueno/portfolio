@@ -8,7 +8,7 @@ categories:
   - javascript
 ---
 
-/* cspell:ignore funcionHijo entornoLexicoDeFuncionHija */
+<!-- cspell:ignore funcionHijo entornoLexicoDeFuncionHija -->
 
 Cuando comencé a aprender sobre las closures, escuché y leí muchas veces explicaciones como esta: *"Una closure es una función
 que retorna otra función, y la función que se retorna usa variables que se definieron en el cuerpo de la función padre"*, o
